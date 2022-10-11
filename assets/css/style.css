@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --bg-header: #f5f6fa;
+}
+
 img{
   width: 100%;
   height: 100%;
@@ -8,6 +21,11 @@ a{
   text-decoration: none;
 }
 
+ul{
+  margin: 0;
+  padding: 0;
+}
+
 li{
   list-style-type: none;
 }
@@ -16,15 +34,17 @@ nav{
   display: flex;
   height: 80px;
   width: 100%;
-  background: #1b1b1b;
+  background: var(--bg-header);
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px 0 100px;
+  padding: 0 50px 0 50px;
   flex-wrap: wrap;
 }
 nav .logo{
-  color: #fff;
-  font-size: 35px;
+  display: flex;
+  align-items: stretch;
+  height: 40px;
+  color: #000;
   font-weight: 600;
 }
 nav ul{
@@ -36,22 +56,22 @@ nav ul li{
   margin: 0 5px;
 }
 nav ul li a{
-  color: #f2f2f2;
+  color: #000;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   padding: 8px 15px;
   border-radius: 5px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
-nav ul li a.active,
+/* nav ul li a.active,
 nav ul li a:hover{
-  color: #111;
-  background: #fff;
-}
+  color: var(--bg-header);
+  background: #000;
+} */
 nav .menu-btn i{
-  color: #fff;
+  color: #000;
   font-size: 22px;
   cursor: pointer;
   display: none;
@@ -59,23 +79,24 @@ nav .menu-btn i{
 input[type="checkbox"]{
   display: none;
 }
-@media (max-width: 1000px){
-  nav{
-    padding: 0 40px 0 50px;
-  }
+@media (max-width: 992px){
+  
 }
-@media (max-width: 920px) {
+@media (max-width: 768px) {
   nav .menu-btn i{
     display: block;
   }
   #click:checked ~ .menu-btn i:before{
     content: "\f00d";
   }
+  nav .logo{
+    display: none;
+  }
   nav ul{
     position: fixed;
     top: 80px;
     left: -100%;
-    background: #111;
+    background: var(--bg-header);
     height: 100vh;
     width: 100%;
     text-align: center;
@@ -114,42 +135,9 @@ input[type="checkbox"]{
   z-index: -1;
   width: 100%;
   padding: 0 30px;
-  color: #1b1b1b;
+  color: var(--bg-header);
 }
 .content div{
   font-size: 40px;
   font-weight: 700;
 }
-
-
-/* breakpoint: ≥992px */
-/* // X-Small devices (portrait phones, less than 576px) */
-/* // No media query for `xs` since this is the default in Bootstrap */
-
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    
-}
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    
-}
-
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    
-}
-
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    
-}
-
-
-
