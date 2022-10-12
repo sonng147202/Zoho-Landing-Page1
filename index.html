@@ -12,11 +12,12 @@
 <body>
     <div id="main">
         <nav>
-            <div class="logo">
-               <img src="./assets/img/logo-codelovers.png" alt="logo-codelovers">
+            <div class="intro">
+                <img src="./assets/img/logo-codelovers.png" alt="logo-codelovers">
+                <span class="line"></span>
                <img src="./assets/img/logo-zoho.png" alt="logo-zoho">
             </div>
-            <div class="d-flex align-items-center">
+            <div class="menu">
                 <input type="checkbox" id="click">
                 <label for="click" class="menu-btn">
                     <i class="fa-solid fa-bars"></i>
@@ -26,12 +27,42 @@
                    <li><a href="#">Bảng giá</a></li>
                    <li><a href="#">FAQ</a></li>
                 </ul>
-                <a href="tel:19001786" class="btn-hotline">
-                    Hotline 19001786
+                <a href="tel:19001786" class="btn-hotline d-flex justify-content-center align-items-center">
+                    <span>Hotline 19001786</span>
                 </a>
             </div>
         </nav>
-        <div class="container">
+        <div id="banner">
+            <div class="container-fluid">
+                <div class="content">
+                    <div class="left">
+                        <div class="intro">
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="logo mb-4">
+                                    <img src="./assets/img/logo-codelovers.png" alt="logo-codelovers">
+                                </div>
+                                <div class="logo mb-4">
+                                    <img src="./assets/img/logo-zoho.png" alt="logo-zoho">
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="fw-bold mb-4">
+                            Zoho Mail & Zoho Workplace
+                        </h1>
+                        <p class="fw-bold mb-4">
+                            Giải pháp tuyệt vời thay thế Google Workspace và Microsoft 365 với chất lượng tương đương, nhưng giá rẻ hơn đến 50%
+                        </p>
+                        <div class="mb-4">
+                            <a href="#" class="btn btn-danger">
+                                Đăng ký dùng thử 15 ngày
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="./assets/img/banner.png" alt="banner">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>

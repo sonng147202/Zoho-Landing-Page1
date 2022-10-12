@@ -8,7 +8,11 @@
 }
 
 :root {
-  --bg-header: #f5f6fa;
+  /*  */
+  --height-header-mobi: 70px;
+  /* color */
+  /* background */
+  --bg-header: #fff;
 }
 
 img{
@@ -30,24 +34,39 @@ li{
   list-style-type: none;
 }
 
+/* NAV */
 nav{
   display: flex;
-  height: 80px;
+  height: var(--height-header-mobi);
   width: 100%;
   background: var(--bg-header);
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px 0 50px;
+  padding: 0 35px 0 35px;
   flex-wrap: wrap;
 }
 
-nav .logo{
+nav .intro{
   display: flex;
   align-items: stretch;
   height: 40px;
   color: #000;
   font-weight: 600;
 }
+
+nav .intro .line{
+  width: 1px;
+  height: 100%;
+  margin: 0 5px;
+  border-left: 1px solid #E0E0E0;
+}
+
+nav .menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 nav ul{
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +90,7 @@ nav ul li a{
 
 /* nav ul li a.active,
 nav ul li a:hover{
-  color: var(--bg-header);
+  color: #E97730;
   background: #000;
 } */
 
@@ -80,6 +99,7 @@ nav .menu-btn i{
   font-size: 22px;
   cursor: pointer;
   display: none;
+  padding: 0 35px;
 }
 
 input[type="checkbox"]{
@@ -93,76 +113,137 @@ nav .btn-hotline{
   text-transform: uppercase;
   background: #E97730;
 }
+/* END:NAV */
 
-@media (max-width: 1200px){
+/* BANNER */
+#banner .content{
+  width: 100%;
+  background-color: #FDF2CC;
+  border-radius: 24px;
+  padding: 50px 100px;
+  display: flex;
+}
+
+#banner .left{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+}
+
+#banner .left .intro{
+  display: none;  
+}
+
+#banner .intro .logo{
+  width: auto;
+  height: 45px;
+  display: inline-block;
+}
+
+#banner .intro h1{
   
 }
+/* END:BANNER */
+
+
 @media (max-width: 992px) {
+  /* NAV/TABLET->MOBI */
+  nav{
+    padding: 0;
+  }
+
+  nav .menu-btn{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+  }
 
   nav .menu-btn i{
     display: block;
   }
 
-  #click:checked ~ .menu-btn i:before{
-    content: "\f00d";
+  nav .intro{
+    display: none;
   }
 
-  nav .logo{
-    display: none;
+  nav .menu{
+    height: var(--height-header-mobi);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
   }
 
   nav ul{
     position: fixed;
-    top: 80px;
-    left: -100%;
+    top: -100%;
+    left: 0;
+    z-index: -1;
     background: var(--bg-header);
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     text-align: center;
     display: block;
-    transition: all 0.3s ease;
-  }
-
-  #click:checked ~ ul{
-    left: 0;
+    transition: all 0.4s linear;
   }
 
   nav ul li{
     width: 100%;
-    margin: 40px 0;
+    border-bottom: 1px solid #E0E0E0;
   }
 
   nav ul li a{
-    width: 100%;
-    margin-left: -100%;
     display: block;
-    font-size: 20px;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    padding: 25px 0;
   }
 
-  #click:checked ~ ul li a{
-    margin-left: 0px;
-  }
-
-  nav ul li a.active,
+  /* nav ul li a.active,
   nav ul li a:hover{
     background: none;
-    color: cyan;
+    color: #E97730;
+  } */
+
+  nav .menu .btn-hotline{
+    height: 100%;
+    padding: 0;
+    flex: 1 1 auto;
   }
 
-}
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -1;
-  width: 100%;
-  padding: 0 30px;
-  color: var(--bg-header);
-}
-.content div{
-  font-size: 40px;
-  font-weight: 700;
+  /* #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  } */
+
+  #click:checked ~ ul{
+    top: var(--height-header-mobi);
+    transition: all 0.4s linear;
+  }
+  /* END:NAV/TABLET->MOBI */
+
+  /* BANNER/TABLET->MOBI */
+  #banner .left .intro{
+    display: block;  
+  }
+
+  #banner .container-fluid{
+    margin: 0;
+    padding: 0;
+  }
+
+  #banner .content{
+    border-radius: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #banner .content .left{
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
+  /* END:BANNER/TABLET->MOBI */
 }
