@@ -172,8 +172,8 @@ nav .btn-hotline{
 .service .service__title span{
   color: #222222;
 }
-.service .service__container{
-}
+/* .service .service__container{
+} */
 .service .service__item{
   height: 100%;
   padding: 35px 15px;
